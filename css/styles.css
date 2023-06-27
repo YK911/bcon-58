@@ -1,0 +1,104 @@
+:root {
+  /* Fonts */
+  --primary-font: 'Open Sans', sans-serif;
+  --secondary-font: 'Raleway', sans-serif;
+  /* Colors */
+  --primary-cl: #303030;
+  --accent-cl: #ff6c00;
+  /* Others */
+}
+
+/**
+  |============================
+  | Base styles
+  |============================
+*/
+body {
+  font-family: var(--primary-font);
+  color: var(--primary-cl);
+}
+address {
+  font-style: normal;
+}
+.list {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+  color: currentColor;
+}
+.btn {
+  font-family: inherit;
+  cursor: pointer;
+}
+/**
+  |============================
+  | Benefits styles
+  |============================
+*/
+.benefits {
+}
+.benefits-list {
+}
+.benefits-item {
+}
+.benefits-quantity {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.36;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+.benefits-sign {
+  color: var(--accent-cl);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.38;
+}
+.benefits-desc {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.36;
+  text-align: center;
+}
+.benefits-uppertitle {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+.benefits-title {
+  font-family: var(--secondary-font);
+  font-size: 42px;
+  line-height: 1.67;
+  letter-spacing: 0.05em;
+}
+.benefits-subtitle {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: #555;
+}
+/**
+  |============================
+  | Team section
+  |============================
+*/
+.team {
+}
+.team-uppertitle {
+}
+.team-title {
+}
+.team-list {
+}
+.team-item {
+}
+.team-pic {
+}
+.team-subtitle {
+}
+.team-desc {
+  color: var(--accent-cl);
+}
