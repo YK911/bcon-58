@@ -12,6 +12,8 @@
   --grey-cl: #9da4bd;
   --grey-cl-40: rgba(157, 164, 189, 0.4);
   --grey-cl-60: rgba(157, 164, 189, 0.6);
+  /* Others */
+  --radius: 25px;
 }
 /**
   |============================
@@ -22,22 +24,47 @@ body {
   font-family: var(--primary-font);
   color: var(--primary-cl);
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
 a {
   text-decoration: none;
   color: currentColor;
 }
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 button {
   font-family: inherit;
   color: inherit;
   cursor: pointer;
 }
+img {
+  display: block;
+}
 /* Common styles */
 .section {
+  padding: 120px 0;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  outline: 2px solid red;
+  outline-offset: -2px;
 }
 .main-title {
+  margin-bottom: 20px;
+
   font-family: var(--secondary-font);
   font-size: 72px;
   line-height: 1.18;
@@ -45,6 +72,8 @@ button {
   color: var(--light-cl);
 }
 .uppertitle {
+  margin-bottom: 20px;
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -54,21 +83,30 @@ button {
   color: var(--grey-cl-60);
 }
 .title {
+  margin-bottom: 20px;
+
   font-family: var(--secondary-font);
   font-size: 42px;
   line-height: 1.17;
   letter-spacing: 0.05em;
 }
 .title-dark {
+  margin-bottom: 44px;
   color: var(--light-cl);
 }
 .subtitle {
+  margin-bottom: 20px;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: var(--secondary-cl);
 }
 .btn {
+  min-width: 160px;
+  min-height: 40px;
+  padding: 11px 19px;
+
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
@@ -77,6 +115,8 @@ button {
   color: var(--primary-cl);
 
   background-color: transparent;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent-cl);
 }
 .btn-dark {
   color: var(--light-cl);
@@ -118,6 +158,8 @@ button {
   color: var(--accent-cl);
 }
 .header-contact {
+  margin-right: 40px;
+
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
@@ -154,6 +196,8 @@ button {
   color: var(--accent-cl);
 }
 .hero-desc {
+  width: 360px;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
@@ -185,7 +229,12 @@ button {
 }
 .about-img {
 }
+.about-right-side {
+  width: 470px;
+}
 .about-desc {
+  margin-bottom: 42px;
+
   font-size: 14px;
   line-height: 1.86;
   letter-spacing: 0.02em;
@@ -202,6 +251,11 @@ button {
   background-color: var(--dark-cl);
 }
 .price-list {
+  width: 570px;
+  padding: 30px 20px;
+
+  outline: 2px solid hotpink;
+  outline-offset: -2px;
 }
 .price-item {
   font-size: 18px;
@@ -209,7 +263,12 @@ button {
   letter-spacing: 0.02em;
   color: var(--grey-cl);
 }
+.price-item:not(:last-child) {
+  margin-bottom: 20px;
+}
 .price-btn {
+  display: block;
+  margin: 0 auto;
 }
 /**
   |============================
