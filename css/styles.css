@@ -4,10 +4,15 @@
   --secondary-font: 'Raleway', sans-serif;
   /* Colors */
   --primary-cl: #303030;
+  --secondary-cl: #555555;
   --accent-cl: #ff6c00;
-  /* Others */
+  --light-cl: #ffffff;
+  --light-bg: #f7f7f7;
+  --dark-cl: #111319;
+  --grey-cl: #9da4bd;
+  --grey-cl-40: rgba(157, 164, 189, 0.4);
+  --grey-cl-60: rgba(157, 164, 189, 0.6);
 }
-
 /**
   |============================
   | Base styles
@@ -17,19 +22,194 @@ body {
   font-family: var(--primary-font);
   color: var(--primary-cl);
 }
-address {
-  font-style: normal;
-}
-.list {
-  list-style: none;
-}
-.link {
+a {
   text-decoration: none;
   color: currentColor;
 }
-.btn {
+ul {
+  list-style: none;
+}
+button {
   font-family: inherit;
+  color: inherit;
   cursor: pointer;
+}
+/* Common styles */
+.section {
+}
+.main-title {
+  font-family: var(--secondary-font);
+  font-size: 72px;
+  line-height: 1.18;
+  letter-spacing: 0.05em;
+  color: var(--light-cl);
+}
+.uppertitle {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+.uppertitle-dark {
+  color: var(--grey-cl-60);
+}
+.title {
+  font-family: var(--secondary-font);
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+}
+.title-dark {
+  color: var(--light-cl);
+}
+.subtitle {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--secondary-cl);
+}
+.btn {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--primary-cl);
+
+  background-color: transparent;
+}
+.btn-dark {
+  color: var(--light-cl);
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--light-cl);
+  background-color: var(--accent-cl);
+}
+
+/**
+  |============================
+  | Header styles
+  |============================
+*/
+.header {
+  background-color: var(--dark-cl);
+}
+.header-logo {
+}
+.header-img {
+}
+.header-nav {
+}
+.header-list {
+}
+.header-item {
+}
+.header-link {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: var(--light-cl);
+}
+.header-link:hover,
+.header-link:focus {
+  color: var(--accent-cl);
+}
+.header-contact {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: var(--light-cl);
+}
+.header-contact:hover,
+.header-contact:focus {
+  color: var(--accent-cl);
+}
+.header-btn {
+}
+/**
+  |============================
+  | Hero styles
+  |============================
+*/
+.hero {
+  background-color: var(--dark-cl);
+}
+.networks {
+}
+.networks-item {
+}
+.networks-link {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  color: var(--primary-cl);
+}
+.networks-link:hover,
+.networks-link:focus {
+  color: var(--accent-cl);
+}
+.hero-desc {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--grey-cl);
+}
+.hero-controls {
+}
+.hero-controls-item {
+}
+.hero-controls-btn {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  color: var(--light-cl);
+
+  background-color: transparent;
+}
+/**
+  |============================
+  | About styles
+  |============================
+*/
+.about {
+}
+.about-list {
+}
+.about-item {
+}
+.about-img {
+}
+.about-desc {
+  font-size: 14px;
+  line-height: 1.86;
+  letter-spacing: 0.02em;
+  color: var(--secondary-cl);
+}
+.about-btn {
+}
+/**
+  |============================
+  | Price styles
+  |============================
+*/
+.price {
+  background-color: var(--dark-cl);
+}
+.price-list {
+}
+.price-item {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--grey-cl);
+}
+.price-btn {
 }
 /**
   |============================
@@ -43,53 +223,38 @@ address {
 .benefits-item {
 }
 .benefits-quantity {
-  font-size: 42px;
   font-weight: 700;
+  font-size: 42px;
   line-height: 1.36;
-  letter-spacing: 0.05em;
   text-align: center;
+  letter-spacing: 0.05em;
 }
 .benefits-sign {
-  color: var(--accent-cl);
-  text-align: center;
-  font-size: 16px;
   font-weight: 600;
+  font-size: 16px;
   line-height: 1.38;
+  text-align: center;
+  color: var(--accent-cl);
+}
+.benefits-text {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-align: center;
 }
 .benefits-desc {
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.36;
-  text-align: center;
-}
-.benefits-uppertitle {
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.36;
-  text-transform: uppercase;
-}
-.benefits-title {
-  font-family: var(--secondary-font);
-  font-size: 42px;
-  line-height: 1.67;
-  letter-spacing: 0.05em;
-}
-.benefits-subtitle {
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
-  color: #555;
+  color: var(--secondary-cl);
 }
 /**
   |============================
-  | Team section
+  | Team styles
   |============================
 */
 .team {
-}
-.team-uppertitle {
-}
-.team-title {
+  background-color: var(--light-bg);
 }
 .team-list {
 }
@@ -97,8 +262,90 @@ address {
 }
 .team-pic {
 }
-.team-subtitle {
+.team-name {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.67;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
-.team-desc {
+.team-position {
+  font-size: 14px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.02em;
   color: var(--accent-cl);
+}
+.socials {
+}
+.socials-item {
+}
+.socials-link {
+}
+.socials-icon {
+}
+/**
+  |============================
+  | Gallery styles
+  |============================
+*/
+.gallery {
+}
+.gallery-list {
+}
+.gallery-item {
+}
+.gallery-img {
+}
+/**
+  |============================
+  | Booking styles
+  |============================
+*/
+.booking {
+  background-color: var(--dark-cl);
+}
+/**
+  |============================
+  | Contacts styles
+  |============================
+*/
+.contacts {
+  background-color: var(--dark-cl);
+}
+.contacts-address {
+  font-style: normal;
+}
+.contacts-list {
+}
+.contacts-item {
+}
+.contatcs-link {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--grey-cl);
+}
+.contacts-uppertitle {
+}
+.contacts-schedule {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: var(--grey-cl);
+}
+/**
+  |============================
+  | Footer styles
+  |============================
+*/
+.footer {
+}
+.footer-copyright {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+
+  color: var(--grey-cl);
 }
