@@ -42,9 +42,11 @@ body {
   | Flexbox layout
   |============================
 */
-.flex-container {
+.flex-container,
+.team-list,
+.gallery-list {
   width: 800px;
-  min-height: 600px;
+  /* min-height: 600px; */
   padding: 20px;
   margin: 0 auto;
 
@@ -53,7 +55,8 @@ body {
 }
 
 .flex-element,
-.team-item {
+.team-item,
+.gallery-item {
   width: 150px;
   height: 150px;
 
@@ -80,9 +83,69 @@ body {
 */
 
 .flex-container {
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 26px; */
+
+  /* justify-content: space-between; */
+
   /* Default properties */
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  /* align-items: stretch; */
+  /* align-content: stretch; */
+  /* flex-wrap: nowrap; */
 }
 
 .flex-element {
+  /* flex-basis: calc((100% - 26px * 4) / 5); */
+
   /* Default properties */
+  /* flex-basis: 200px;
+  flex-shrink: 1;
+  flex-grow: 0; */
+}
+
+/* .team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.team-item {
+  flex-basis: calc((100% - 40px * 3) / 4);
+}
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+.gallery-item {
+  flex-basis: calc((100% - 60px * 2) / 3);
+} */
+/**
+  |============================
+  | Flex grid
+  |============================
+*/
+:root {
+  --indent: 20px;
+  --items: 3;
+}
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+.card-set-item {
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+}
+
+/* Setup for containers */
+.team-list {
+  --items: 4;
+  --indent: 40px;
+}
+.gallery-list {
+  --items: 5;
+  --indent: 10px;
 }
