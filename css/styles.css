@@ -1,4 +1,7 @@
 :root {
+  /* Плавний скрол для якірних посилань */
+  scroll-behavior: smooth;
+
   /* Fonts */
   --primary-font: 'Open Sans', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
@@ -22,6 +25,12 @@
   --radius: 25px;
   --indent: 30px;
   --items: 3;
+
+  --anim-fast: 300ms ease;
+  --anim-slow: 800ms ease;
+
+  --header-idx: 10;
+  --modal-idx: 100;
 }
 /**
   |============================
@@ -31,10 +40,6 @@
 body {
   font-family: var(--primary-font);
   color: var(--primary-cl);
-
-  /* Pattern image */
-  /* background-image: url('https://www.graphicpear.com/wp-content/uploads/2022/10/Abstract-Geometric-3D-Seamless-Pattern-.png');
-  background-size: 200px; */
 }
 h1,
 h2,
@@ -84,11 +89,9 @@ img {
   width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-
-  /* outline: 2px solid red;
-  outline-offset: -2px; */
 }
 .main-title {
+  width: fit-content;
   margin-bottom: 20px;
 
   font-family: var(--secondary-font);
@@ -96,6 +99,8 @@ img {
   line-height: 1.18;
   letter-spacing: 0.05em;
   color: var(--light-cl);
+  /* Transform */
+  /* transform: scale(1.2) skew(15deg) rotate(-45deg) translateX(100px) translateY(30px); */
 }
 .uppertitle {
   display: flex;
@@ -159,6 +164,8 @@ img {
   background-color: transparent;
   border-radius: var(--radius);
   border: 1px solid var(--accent-cl);
+
+  transition: color var(--anim-slow), background-color var(--anim-slow);
 }
 .btn-dark {
   color: var(--light-cl);
@@ -190,7 +197,18 @@ img {
   |============================
 */
 .header {
-  background-color: var(--dark-cl);
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--header-idx);
+
+  border-radius: 20px;
+  transition: background-color var(--anim-fast), backdrop-filter var(--anim-fast);
+}
+.header.no-transparency {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
 }
 .header-container {
   display: flex;
@@ -200,6 +218,11 @@ img {
   margin-right: 124px;
 }
 .header-img {
+  transition: fill var(--anim-fast);
+}
+
+.header.no-transparency .header-img {
+  fill: var(--light-cl);
 }
 .header-nav {
   margin-right: auto;
@@ -210,6 +233,7 @@ img {
 }
 .header-item {
 }
+/* Normal state */
 .header-link {
   display: block;
   padding: 30px 0;
@@ -219,7 +243,15 @@ img {
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: var(--light-cl);
+
+  transition: color var(--anim-fast);
+
+  /* transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  transition-delay: 2s; */
 }
+/* Active state */
 .header-link:hover,
 .header-link:focus {
   color: var(--accent-cl);
@@ -233,6 +265,8 @@ img {
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: var(--light-cl);
+
+  transition: color var(--anim-fast);
 }
 .header-contact:hover,
 .header-contact:focus {
@@ -252,6 +286,12 @@ img {
 }
 .hero-left-side {
   width: 100px;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-networks {
+  transform: rotate(-90deg) translateX(40px) translateY(36px);
+  transform-origin: center left;
 }
 .networks {
   display: flex;
@@ -273,6 +313,8 @@ img {
   line-height: 1.36;
   letter-spacing: 0.2em;
   color: var(--primary-cl);
+
+  transition: color var(--anim-fast);
 }
 .networks-link:hover,
 .networks-link:focus {
@@ -329,32 +371,16 @@ img {
   gap: 30px;
 }
 .about-item {
-  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  /* cursor: zoom-in; */
 }
-/* .about-item::after {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  z-index: -1;
 
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  background-image: radial-gradient(
-    circle at center,
-    rgb(255, 0, 0) 4px,
-    rgba(255, 0, 0, 0.3) 8px,
-    rgba(0, 0, 0, 0) 10px
-  );
-  background-size: 30px 30px;
-
-  background-image: linear-gradient(to top, #bdc3c7, #2c3e50);
-  border-radius: 20px;
-} */
 .about-img {
-  border-radius: 20px;
+  transition: transform 2s linear;
+}
+.about-item:hover .about-img {
+  transform: scale(1.2);
 }
 .about-right-side {
   width: 470px;
@@ -503,8 +529,41 @@ img {
 }
 .team-item {
 }
+.team-item-box {
+  position: relative;
+  overflow: hidden;
+}
 .team-pic {
 }
+/* Overlay text */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(157, 164, 189, 0.5);
+  backdrop-filter: blur(2px);
+
+  transition: transform 400ms;
+}
+.team-item:hover .overlay {
+  transform: translateY(0);
+}
+.overlay-text {
+  font-size: 26px;
+  line-height: 1.5;
+  color: var(--light-cl);
+}
+
 .team-wrapper {
   padding: 30px 10px;
 }
@@ -545,12 +604,8 @@ img {
   background-color: var(--light-cl);
   border-radius: 50%;
 
-  /* Set icons like bg-image */
-  /* background-image: url('../images/icons/facebook.svg');
-  background-repeat: no-repeat;
-  background-position: center; */
+  transition: color var(--anim-fast);
 }
-/* Super easy way */
 .socials-link:hover,
 .socials-link:focus {
   color: var(--accent-cl);
@@ -558,14 +613,6 @@ img {
 .socials-icon {
   fill: currentColor;
 }
-/* Easy way */
-/* .socials-icon {
-  fill: var(--primary-cl);
-}
-.socials-link:hover .socials-icon,
-.socials-link:focus .socials-icon {
-  fill: var(--accent-cl);
-} */
 /**
   |============================
   | Gallery styles
@@ -669,4 +716,68 @@ img {
 }
 .link-footer {
   padding: 30px 0;
+}
+/**
+  |============================
+  | Modal window
+  |============================
+*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--modal-idx);
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(9, 11, 19, 0.3);
+  backdrop-filter: blur(2px);
+
+  opacity: 1;
+  pointer-events: initial;
+  visibility: visible;
+
+  transition: opacity 400ms ease-out, visibility 400ms ease-out;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 400px;
+  height: 500px;
+
+  background-color: var(--light-cl);
+  border-radius: 10px;
+  transition: transform 400ms ease-out, opacity 400ms ease-out;
+  transition-delay: 400ms;
+}
+
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: translate(-50%, -70%);
+  transition-delay: 0ms;
+}
+.modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+}
+.modal-icon {
+  fill: var(--primary-cl);
 }
