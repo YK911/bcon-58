@@ -66,8 +66,6 @@ button {
 }
 img {
   display: block;
-  /* width: 100%;
-  height: auto; */
 }
 .visually-hidden {
   position: absolute;
@@ -99,8 +97,6 @@ img {
   line-height: 1.18;
   letter-spacing: 0.05em;
   color: var(--light-cl);
-  /* Transform */
-  /* transform: scale(1.2) skew(15deg) rotate(-45deg) translateX(100px) translateY(30px); */
 }
 .uppertitle {
   display: flex;
@@ -233,7 +229,6 @@ img {
 }
 .header-item {
 }
-/* Normal state */
 .header-link {
   display: block;
   padding: 30px 0;
@@ -245,13 +240,7 @@ img {
   color: var(--light-cl);
 
   transition: color var(--anim-fast);
-
-  /* transition-property: color;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-  transition-delay: 2s; */
 }
-/* Active state */
 .header-link:hover,
 .header-link:focus {
   color: var(--accent-cl);
@@ -373,7 +362,6 @@ img {
 .about-item {
   overflow: hidden;
   border-radius: 20px;
-  /* cursor: zoom-in; */
 }
 
 .about-img {
@@ -409,9 +397,6 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  /* Позиція зі зміщенням */
-  /* background-position: top 50% left calc(50% + 800px); */
 }
 .price-wrapper {
   display: flex;
