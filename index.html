@@ -23,6 +23,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -51,10 +53,12 @@
             </li>
           </ul>
         </nav>
-        <a class="header-contact" href="tel:+380441111111">+38 044 111 11 11</a>
-        <button class="header-btn btn btn-dark" type="button" data-modal-open
-          >Online-booking</button
-        >
+        <div class="header-wrapper">
+          <a class="header-contact" href="tel:+380441111111">+38 044 111 11 11</a>
+          <button class="header-btn btn btn-dark" type="button" data-modal-open>
+            Online-booking
+          </button>
+        </div>
       </div>
     </header>
     <!-- Main block -->
@@ -87,9 +91,15 @@
             </ul>
           </div>
           <div class="hero-right-side">
-            <p class="uppertitle uppertitle-dark">A hair salon for men in Kyiv</p>
-            <h1 class="main-title">BarberShop</h1>
-            <p class="hero-desc">
+            <p
+              class="hero-uppertitle uppertitle uppertitle-dark"
+              style="--shift-x: 0; --shift-y: -60px; --shift: 1"
+              >A hair salon for men in Kyiv</p
+            >
+            <h1 class="hero-title main-title" style="--shift-x: 260px; --shift-y: 0; --shift: 2"
+              >BarberShop</h1
+            >
+            <p class="hero-desc" style="--shift-x: 0; --shift-y: 100px; --shift: 3">
               We are experts in trendy men’s haircuts. We work quickly, carefully and with style.
             </p>
           </div>
@@ -177,19 +187,39 @@
         <div class="benefits-container container">
           <div class="benefits-left-side">
             <ul class="benefits-list">
-              <li class="benefits-item">
+              <li
+                class="benefits-item"
+                data-aos="zoom-in"
+                data-aos-duration="800"
+                data-aos-delay="500"
+              >
                 <p class="benefits-quantity">600 <sup class="benefits-sign">&plus;</sup></p>
                 <p class="benefits-text">Satisfied customers per day</p>
               </li>
-              <li class="benefits-item">
+              <li
+                class="benefits-item"
+                data-aos="zoom-in"
+                data-aos-duration="800"
+                data-aos-delay="800"
+              >
                 <p class="benefits-quantity">50 <sup class="benefits-sign">&plus;</sup></p>
                 <p class="benefits-text">Awards for excellent service</p>
               </li>
-              <li class="benefits-item">
+              <li
+                class="benefits-item"
+                data-aos="zoom-in"
+                data-aos-duration="800"
+                data-aos-delay="1100"
+              >
                 <p class="benefits-quantity">20 <sup class="benefits-sign">&plus;</sup></p>
                 <p class="benefits-text">Kyiv’s best professional barbers</p>
               </li>
-              <li class="benefits-item">
+              <li
+                class="benefits-item"
+                data-aos="zoom-in"
+                data-aos-duration="800"
+                data-aos-delay="1400"
+              >
                 <p class="benefits-quantity">100 <sup class="benefits-sign">&plus;</sup></p>
                 <p class="benefits-text">Gifts for regular customers</p>
               </li>
@@ -429,7 +459,12 @@
           <p class="gallery-uppertitle uppertitle">In Latin, "barba" means "beard"</p>
           <h2 class="visually-hidden title">Barbershop gallery</h2>
           <ul class="gallery-list card-set">
-            <li class="card-set-item">
+            <li
+              class="card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="300"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-1.jpg"
@@ -438,7 +473,12 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item card-set-item">
+            <li
+              class="card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="600"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-2.jpg"
@@ -447,7 +487,12 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item card-set-item">
+            <li
+              class="card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="900"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-3.jpg"
@@ -456,7 +501,12 @@
                 height="360"
               />
             </li>
-            <li class="gallery-item card-set-item">
+            <li
+              class="card-set-item"
+              data-aos="fade-right"
+              data-aos-duration="600"
+              data-aos-delay="1200"
+            >
               <img
                 class="gallery-img"
                 src="./images/gallery/img-4.jpg"
@@ -472,6 +522,40 @@
         <!-- Booking section -->
         <section class="booking section">
           <h2 class="title title-dark">Online-booking</h2>
+          <form class="booking-form" name="booking_form" autocomplete="off">
+            <div class="booking-form-wrapper">
+              <label class="booking-form-field">
+                <input
+                  class="booking-form-input"
+                  type="text"
+                  name="user_name"
+                  placeholder="Antony Black"
+                  required
+                />
+                <span class="booking-form-tag">Name*</span>
+              </label>
+              <label class="booking-form-field">
+                <input
+                  class="booking-form-input"
+                  type="tel"
+                  name="user_phone"
+                  placeholder="+38 (***) ***-**-**"
+                  required
+                />
+                <span class="booking-form-tag">Phone*</span>
+              </label>
+            </div>
+            <label class="booking-form-bottom">
+              <span class="booking-form-label">Message</span>
+              <textarea
+                class="booking-form-message"
+                name="user_message"
+                rows="5"
+                placeholder="Enter your message..."
+              ></textarea>
+            </label>
+            <button class="btn btn-dark" type="submit">Send</button>
+          </form>
         </section>
         <!-- Contacts section -->
         <section class="contacts section" id="contacts">
@@ -546,7 +630,7 @@
     </footer>
 
     <!-- Modal window -->
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
       <div class="modal">
         <button
           class="modal-btn"
@@ -558,10 +642,70 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <strong class="modal-caption">Leave your contacts and we will call you back</strong>
+
+        <form class="modal-form" name="register_form">
+          <label class="modal-form-label" for="register_form_name">Name</label>
+          <div class="modal-form-field">
+            <input
+              class="modal-form-input"
+              type="text"
+              name="register_form_name"
+              id="register_form_name"
+            />
+            <svg class="modal-form-icon" width="20" height="20">
+              <use href="./images/icons.svg#icon-user"></use>
+            </svg>
+          </div>
+          <label class="modal-form-label" for="register_form_tel">Phone</label>
+          <div class="modal-form-field">
+            <input
+              class="modal-form-input"
+              type="tel"
+              name="register_form_tel"
+              id="register_form_tel"
+            />
+            <svg class="modal-form-icon" width="20" height="20">
+              <use href="./images/icons.svg#icon-user"></use>
+            </svg>
+          </div>
+          <label class="modal-form-label" for="register_form_email">Email</label>
+          <div class="modal-form-field">
+            <input
+              class="modal-form-input"
+              type="email"
+              name="register_form_email"
+              id="register_form_email"
+            />
+            <svg class="modal-form-icon" width="20" height="20">
+              <use href="./images/icons.svg#icon-user"></use>
+            </svg>
+          </div>
+
+          <label class="modal-form-agreement">
+            <input
+              class="modal-form-agreement-checkbox visually-hidden"
+              type="checkbox"
+              name="user-agreement"
+            />
+            <svg class="modal-form-custom-checkbox" width="16" height="16">
+              <use class="unchecked" href="./images/icons.svg#unchecked"></use>
+              <use class="checked" href="./images/icons.svg#checked"></use>
+            </svg>
+            <span class="modal-form-agreement-desc"
+              >I accept the terms and conditions of the
+              <a class="modal-form-agreement-link" href="#">Privacy Policy</a>
+            </span>
+          </label>
+        </form>
       </div>
     </div>
 
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/animation-on-scroll.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/modal.js"></script>
+    <!-- <script src="./js/form.js"></script> -->
   </body>
 </html>
