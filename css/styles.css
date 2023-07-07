@@ -67,7 +67,7 @@ button {
 }
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 .visually-hidden {
@@ -252,7 +252,12 @@ img {
   align-items: center;
 }
 .header-logo {
-  margin-right: 124px;
+  margin-right: 70px;
+}
+@media only screen and (min-width: 1200px) {
+  .header-logo {
+    margin-right: 124px;
+  }
 }
 .header-img {
   transition: fill var(--anim-fast);
@@ -271,9 +276,12 @@ img {
 }
 .header-list {
   display: flex;
-  gap: 30px;
+  gap: 16px;
 }
-.header-item {
+@media only screen and (min-width: 1200px) {
+  .header-list {
+    gap: 30px;
+  }
 }
 .header-link {
   display: block;
@@ -313,6 +321,11 @@ img {
   color: var(--light-cl);
 
   transition: color var(--anim-fast);
+}
+@media only screen and (max-width: 1199px) {
+  .header-contact {
+    display: none;
+  }
 }
 .header-contact:hover,
 .header-contact:focus {
@@ -556,6 +569,12 @@ img {
 .about-img {
   transition: transform 2s linear;
 }
+@media only screen and (min-width: 1200px) {
+  .about-img {
+    width: 270px;
+    height: 445px;
+  }
+}
 .about-item:hover .about-img {
   transform: scale(1.2);
 }
@@ -566,12 +585,15 @@ img {
 }
 @media only screen and (min-width: 1200px) {
   .about-right-side {
-    width: 470px;
+    max-width: 470px;
   }
 }
-.about-title {
-  width: 306px;
+@media only screen and (max-width: 767px) {
+  .about-title {
+    width: 306px;
+  }
 }
+
 .about-desc {
   margin-bottom: 40px;
 
@@ -600,26 +622,83 @@ img {
   margin: 0 auto;
 
   background-color: var(--dark-cl);
-  background-image: url('../images/price/bg-img.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  background-image: url('../images/price/bg-img_mob@1x.png');
+}
+/* Mobile screen */
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .price {
+    background-image: url('../images/price/bg-img_mob@2x.png');
+  }
+}
+/* Tablet screen */
+@media only screen and (min-width: 481px) {
+  .price {
+    background-image: url('../images/price/bg-img_tab@1x.png');
+  }
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .price {
+      background-image: url('../images/price/bg-img_tab@2x.png');
+    }
+  }
+}
+/* Desktop screen */
+@media only screen and (min-width: 769px) {
+  .price {
+    background-image: url('../images/price/bg-img_desk@1x.png');
+  }
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .price {
+      background-image: url('../images/price/bg-img_desk@2x.png');
+    }
+  }
 }
 .price-wrapper {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 
   margin-bottom: 44px;
 }
+@media only screen and (max-width: 1199px) {
+  .price-wrapper {
+    padding: 32px 34px;
+    background-image: var(--primary-gradient);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .price-wrapper {
+    padding: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .price-wrapper {
+    gap: 30px;
+  }
+}
 .price-list {
-  width: 570px;
-  padding: 30px 20px;
+  flex-basis: 100%;
 }
-.price-list:first-child {
-  background-image: var(--primary-gradient);
+@media only screen and (min-width: 1200px) {
+  .price-list {
+    flex-basis: 570px;
+    padding: 30px 20px;
+  }
 }
-.price-list:last-child {
-  background-image: var(--secondary-gradient);
+@media only screen and (min-width: 1200px) {
+  .price-list:first-child {
+    background-image: var(--primary-gradient);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .price-list:last-child {
+    background-image: var(--secondary-gradient);
+  }
 }
 .price-item {
   display: flex;
@@ -630,6 +709,12 @@ img {
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: var(--grey-cl);
+}
+@media only screen and (max-width: 767px) {
+  .price-item {
+    font-size: 14px;
+    line-height: 1.42;
+  }
 }
 .price-item:not(:last-child) {
   margin-bottom: 20px;
@@ -1016,10 +1101,17 @@ img {
 .footer {
   padding: 22px 0;
 }
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media only screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer-networks {
+  width: fit-content;
+  margin-left: auto;
 }
 .footer-copyright {
   font-weight: 600;
