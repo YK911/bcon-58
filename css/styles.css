@@ -639,7 +639,6 @@ img {
   .price {
     background-image: url('../images/price/bg-img_tab@1x.png');
   }
-
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .price {
       background-image: url('../images/price/bg-img_tab@2x.png');
@@ -651,7 +650,6 @@ img {
   .price {
     background-image: url('../images/price/bg-img_desk@1x.png');
   }
-
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .price {
       background-image: url('../images/price/bg-img_desk@2x.png');
@@ -1000,7 +998,7 @@ img {
   top: 0;
   left: 0;
 
-  color: rgba(157, 164, 189, 0.4);
+  color: var(--grey-cl-40);
   font-size: 11px;
   font-weight: 600;
   line-height: 15px;
@@ -1020,7 +1018,7 @@ img {
   margin-bottom: 44px;
 }
 .booking-form-label {
-  color: rgba(157, 164, 189, 0.4);
+  color: var(--grey-cl-40);
 
   font-size: 11px;
   font-weight: 600;
@@ -1226,7 +1224,7 @@ img {
   transition: var(--anim-fast);
 }
 .modal-form-input:focus {
-  border-color: #ff6c00;
+  border-color: var(--accent-cl);
 }
 .modal-form-icon {
   position: absolute;
@@ -1255,7 +1253,7 @@ img {
   transition: var(--anim-fast);
 }
 .modal-form-comment:focus {
-  border-color: #ff6c00;
+  border-color: var(--accent-cl);
 }
 /* CHECKBOX STYLES */
 .modal-form-agreement {
